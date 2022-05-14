@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+
+<h3>Edit Profile</h3>
+<hr>
+<form method = "post">
+    {{ render_field(form.name,class = "form-control") }}
+    {{ render_field(form.password,class = "form-control") }}
+    <button type="submit" class="btn btn-success float-right">Update Profile</button>
+</form>
+
+{% endblock body %}

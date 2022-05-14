@@ -1,0 +1,61 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top"  >
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand"  href="/" >Mehmet Talha KUMCU</a>
+    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/products">Products</a>
+          </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/products2">Products 2</a>
+          </li>
+        
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+            <li class="nav-item active">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        {% else %}
+
+         <li class="nav-item active">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+        {% endif %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+        
+        </ul>
+    </div>
+
+
+  </nav>
+  <style>
+.navbar{
+  background-color: #22035a;
+}
+.navbar-brand{
+  color:#fff!important;
+  font-size:1.4rem;
+  font-weight:700;
+}
+.nav-link{
+  color:#fff!important;
+  font-size:1.1rem;
+  font-weight:700;
+}
+.nav-link:hover{
+  color:#5c2c79!important;
+}
+  </style>

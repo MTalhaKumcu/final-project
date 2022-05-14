@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+<script>
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
+{% block body %}
+<h3>Product List 2 </h3>
+<a type="button" class="btn btn-md btn-info float-right" href="/add-product2"> Add New Product </a>
+
+
+{% from "includes/formhelpers.html" import render_field %}
+
+
+                <table id="table_id"   class="table table-hover table-striped table-bordered content-container">
+                    <thead>
+                        <th class="order"><i class="fa fa-reorder"></i></th>
+                        <th class="w50">#id</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Product Code</th>
+                        <th>Price</th>
+                        <th>Rank</th>
+                        <th>Is Active</th>
+                        <th>General Operations</th>
+                    </thead>
+                    <tbody class="sortable" data-url="">
+
+                        {% from "includes/formhelpers.html" import render_field %}
+    {% for product2 in products2  %}
+                            <tr class="ord">
+                                <td class="order"><i class="fa fa-reorder"></i></td>
+                                <td class="w50 text-center">#{{product_2.id}}</td>
+                                <td class="text-center">{{product_2.title}}</td>            
+                                <td class="text-center">{{product_2.category}}</td>
+                                <td class="text-center">{{product_2.product_code}}</td>
+                                <td class="text-center">{{product_2.price}}</td>
+                                <td class="text-center">{{product_2.rank}}</td>            
+                                <td class="text-center">{{product_2.isActive}}</td>
+                                <td class="text-center">
+                                    <a href="/product2-edit/{{product_2.id}}" type="button" class="btn btn-md btn-success">Edit</a>
+                                    <a href="/product2-delete/{{product_2.id}}"  type="button" class="btn btn-md btn-danger">Delete</a>
+                                </td>
+                            </tr>
+  {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+
+    
+{% endblock body %}
